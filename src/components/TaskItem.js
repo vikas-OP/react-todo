@@ -3,7 +3,7 @@ import React from "react"
 const TaskItem = (props) => {
   return (
     <div className="row justify-content-center align-items-center my-3">
-      <div className="col-1 col-offset-3">
+      <div className="col-1">
         <input
           type="checkbox"
           className="form-control big-checkbox mx-3"
@@ -13,10 +13,10 @@ const TaskItem = (props) => {
           }}
         />
       </div>
-      <div className="col-5 text-center">
+      <div className="col-3 col-md-5 text-center">
         <h5>{props.task.name}</h5>
       </div>
-      <div className="col-2">
+      <div className="col-1 col-sm-2">
         <select
           className="form-control select-box mx-3"
           value={props.task.priorityLevel}
@@ -29,7 +29,7 @@ const TaskItem = (props) => {
           <option value="high">High</option>
         </select>
       </div>
-      <div className="col-1">
+      <div className="col-1 mx-5 mx-md-2">
         <button
           onClick={() => {
             props.deleteTask(props.task.id)
