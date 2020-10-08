@@ -66,12 +66,19 @@ const App = () => {
   }
 
   const addOneTask = (task) => {
+    const checkerTask = tasks.find(
+      (item) => item.priorityLevel == task.priorityLevel
+    )
+    if (checkerTask.shouldRender) {
+      task.shouldRender = true
+    } else {
+      task.shouldRender = false
+    }
     const newTasks = [
       ...tasks,
       {
         ...task,
         isComplete: false,
-        shouldRender: true,
         id: ID,
       },
     ]
